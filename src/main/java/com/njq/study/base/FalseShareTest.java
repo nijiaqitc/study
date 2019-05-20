@@ -5,7 +5,7 @@ public class FalseShareTest implements Runnable {
     public final static long ITERATIONS = 500L * 1000L * 1000L;
     private final int arrayIndex;
     private static VolatileLong[] longs;
-    public static long SUM_TIME = 0l;
+    public static long SUM_TIME = 1;
 
     public FalseShareTest(final int arrayIndex) {
         this.arrayIndex = arrayIndex;
