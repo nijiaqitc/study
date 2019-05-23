@@ -1,5 +1,9 @@
 package com.njq.study.base;
 
+/**
+ * 1、可以编写内部私有接口，它只能被类内实现
+ * 2、重写，返回类型泛化的知识点
+ */
 public class SameMethod {
 
     private interface TestE {

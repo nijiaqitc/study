@@ -2,8 +2,6 @@ package com.njq.study.unmodiobj;
 
 /**
  * 如何定义一个不可变对象
- *
- * @author Administrator
  */
 //1、类要定义成final 不能继承
 public final class UnModiObj {

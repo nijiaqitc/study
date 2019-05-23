@@ -1,5 +1,8 @@
 package com.njq.study.base;
 
+/**
+ * 继承关系类实例化顺序
+ */
 public class CustomInit {
 
     /**

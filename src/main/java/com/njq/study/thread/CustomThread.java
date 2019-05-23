@@ -5,6 +5,9 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.FutureTask;
 
+/**
+ * 实现多线程的集中方式
+ */
 public class CustomThread {
 
 

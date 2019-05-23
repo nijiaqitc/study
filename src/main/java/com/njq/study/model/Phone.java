@@ -1,8 +1,7 @@
 package com.njq.study.model;
 
 /**
- * @author: nijiaqi
- * @date: 2019/5/21
+ * 父类构造调用子类方法
  */
 public class Phone {
 

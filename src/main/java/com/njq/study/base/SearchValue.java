@@ -1,8 +1,7 @@
 package com.njq.study.base;
 
 /**
- * @author: nijiaqi
- * @date: 2019/5/21
+ * 字符串搜索的算法
  */
 public class SearchValue {
 

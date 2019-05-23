@@ -1,5 +1,8 @@
 package com.njq.study.base;
 
+/**
+ * 缓存伪共享，导致效率降低的问题
+ */
 public class FalseShareTest implements Runnable {
     public static int NUM_THREADS = 4;
     public final static long ITERATIONS = 500L * 1000L * 1000L;
@@ -41,6 +44,7 @@ public class FalseShareTest implements Runnable {
         }
     }
 
+    @Override
     public void run() {
         long i = ITERATIONS + 1;
         while (0 != --i) {
@@ -50,7 +54,12 @@ public class FalseShareTest implements Runnable {
 
     public final static class VolatileLong {
         public volatile long value = 0L;
-        public long p1, p2, p3, p4, p5, p6;     //屏蔽此行  13358410010    32714979612
+        /**
+         * 这些无用变量的作用是填满整个缓存行，避免缓存共享降低效率
+         * 一个缓存行占64个字节，可以填充8个long
+         */
+        //屏蔽此行  13358410010    32714979612
+        public long p1, p2, p3, p4, p5, p6;
 
     }
 }

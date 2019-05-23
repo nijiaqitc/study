@@ -2,6 +2,9 @@ package com.njq.study.unmodiobj;
 
 import java.lang.reflect.Field;
 
+/**
+ * 通过反射破坏不变类对象
+ */
 public class ModiUnModiObj {
 
     /**

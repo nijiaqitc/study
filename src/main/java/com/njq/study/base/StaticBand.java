@@ -1,5 +1,8 @@
 package com.njq.study.base;
 
+/**
+ * 多态调用重载方法的方式，它是根据静态类型来查找方法
+ */
 public class StaticBand {
 
     private String staticBand = "staticBand";
