@@ -10,6 +10,7 @@ import java.lang.reflect.Field;
  */
 public class test1 {
     public static Unsafe getUnsafe() {
+        //65-90 97-122
         try {
             Field field = Unsafe.class.getDeclaredField("theUnsafe");
             field.setAccessible(true);
@@ -18,10 +19,21 @@ public class test1 {
             e.printStackTrace();
         }
 
+
         return null;
     }
 
 
+    private void test(String a) {
+        switch (a) {
+            case "11":
+                break;
+            case "12":
+                break;
+            default:
+                break;
+        }
+    }
 
 
 }
