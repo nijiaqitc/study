@@ -18,14 +18,16 @@ import java.util.stream.Collectors;
  */
 public class Test {
     public static void main(String[] args) {
-        List<A> list = new ArrayList<>();
-        for (int i = 0;i<10;i++){
-            list.add(new A(new Random().nextInt(100)));
-        }
-        List<A> l = list.stream().sorted(Comparator.comparing(A::getV).reversed()).collect(Collectors.toList());
-        for(int i=0;i<l.size();i++){
-            System.out.println(l.get(i).getV());
-        }
+//        List<A> list = new ArrayList<>();
+//        for (int i = 0;i<10;i++){
+//            list.add(new A(new Random().nextInt(100)));
+//        }
+//        List<A> l = list.stream().sorted(Comparator.comparing(A::getV).reversed()).collect(Collectors.toList());
+//        for(int i=0;i<l.size();i++){
+//            System.out.println(l.get(i).getV());
+//        }
+        Integer a = null;
+        System.out.println(a==1);
     }
 
 
