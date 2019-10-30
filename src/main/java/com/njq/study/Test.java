@@ -26,8 +26,11 @@ public class Test {
 //        for(int i=0;i<l.size();i++){
 //            System.out.println(l.get(i).getV());
 //        }
-        Integer a = null;
-        System.out.println(a==1);
+//        Integer a = null;
+//        System.out.println(a==1);
+        Integer a = 240;
+        System.out.println(Integer.toBinaryString(a));
+        System.out.println(137&224);
     }
 
 

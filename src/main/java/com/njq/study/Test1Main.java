@@ -3,6 +3,7 @@ package com.njq.study;
 
 import org.springframework.beans.BeanUtils;
 
+import javax.sound.midi.Soundbank;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
@@ -67,13 +68,87 @@ public class Test1Main {
 //        System.out.println(opt);
 
 
-        String created = "2019-09-16 20:29:01";
+//        String created = "2019-09-16 20:29:01";
 //        Date createdAt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(created);
 //        System.out.println(createdAt);
-        Date now = new Date();
+//        Date now = new Date();
 //        System.out.println(now.after(new DateTime(chanceData.getUpdatedAt()).plusMinutes(5).toDate()));
 
+//        Testa1 a1 = new Testa1();
+//
+//        Thread t1 = new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                a1.test1();
+//            }
+//        });
+//
+//        Thread t2 = new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                System.out.println(a1.getValue());
+//            }
+//        });
+//
+//        t1.start();
+//        t2.start();
+
+        aaa a = new bbb();
+        a.c1.getValue();
+        ((bbb)a).c1.getValue();
+//        System.out.println();?
+//        System.out.println();
     }
+
+
+    public static  class  aaa{
+        public String aqaq="1";
+        public ccc c1;
+
+        public aaa() {
+            c1 = new ccc();
+            c1.aqaq="1212121";
+        }
+    }
+
+    public static  class  bbb extends aaa{
+        public String aqaq="2";
+        public ccc c1;
+        public bbb() {
+            c1 = new ccc();
+            c1.aqaq="2323232323";
+        }
+
+    }
+
+    public static  class  ccc {
+        public String aqaq="3";
+
+        public void getValue(){
+            System.out.println(aqaq);
+        }
+    }
+
+
+
+
+    public static class Testa1{
+        public  Integer abc = null;
+
+        public synchronized void test1(){
+            try {
+                System.out.println("进入1");
+                Thread.sleep(2000);
+                abc =1;
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        public   Integer getValue(){
+            return  abc;
+        }
+    }
+
 
     public static void aaa(B b) {
 
