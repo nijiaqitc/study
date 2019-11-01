@@ -1,4 +1,4 @@
-package com.njq.study;
+package com.njq.study.sort;
 
 import java.util.Arrays;
 

@@ -28,9 +28,21 @@ public class Test {
 //        }
 //        Integer a = null;sdsdsd
 //        System.out.println(a==1);
-        Integer a = 240;
-        System.out.println(Integer.toBinaryString(a));
-        System.out.println(137&224);
+//        Integer a = 240;
+//        System.out.println(Integer.toBinaryString(a));
+//        System.out.println(137&224);
+        new HashMap<>(2).put("111", "222");
+
+        int cap = 2;
+        int n = cap - 1;
+        System.out.println(n>>>1);
+        n |= n >>> 1;
+
+        n |= n >>> 2;
+        n |= n >>> 4;
+        n |= n >>> 8;
+        n |= n >>> 16;
+        System.out.println(n);
     }
 
 
