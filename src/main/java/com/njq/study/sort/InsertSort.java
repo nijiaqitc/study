@@ -7,8 +7,11 @@ import java.util.Arrays;
  * @date: 2019/9/27
  */
 public class InsertSort {
+
+
+
     public static void main(String[] args) {
-        int[] num = {3, 45, 78, 64, 52, 11, 64, 55, 99, 11, 18};
+        int[] num = {3, 45, 78, 64, 1,52, 11, 64, 55, 99, 11, 18};
         sort2(num);
     }
 
@@ -33,6 +36,7 @@ public class InsertSort {
             int val = arrays[i];
             int j;
             for (j = i; j > 0 && arrays[j - 1] > val; j--) {
+                System.out.println(j);
                 arrays[j] = arrays[j - 1];
             }
             arrays[j] = val;
