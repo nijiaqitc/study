@@ -10,6 +10,8 @@ public class StringTest {
         field1.setAccessible(true);
         StringTest t = new StringTest();
         field1.set(t, "newValue");
+
+
         System.out.println(field1.get(t));
         System.out.println(t.str);
     }
