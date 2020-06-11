@@ -60,5 +60,6 @@ public class ProxyHandler implements InvocationHandler {
         ProxyHandler pr = new ProxyHandler(impl);
         TestInterface fa = pr.getProxy();
         fa.test1();
+        fa.test2("2222");
     }
 }

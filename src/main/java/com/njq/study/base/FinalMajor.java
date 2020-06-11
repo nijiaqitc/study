@@ -23,7 +23,7 @@ public class FinalMajor {
          * 它会触发类初始化----执行类初始化
          */
         System.out.println(FinalMajora.str2);
-
+        System.out.println("------------");
         /**
          * str3虽然不是static的但已经确定好值了，所以也会在类加载的时候在常量池中确定好值
          * 在实例化后会有一个指向常量的引用在常量中
@@ -40,7 +40,7 @@ public class FinalMajor {
         field1.set(major1, "newValue");
         System.out.println(field1.get(major1));
         System.out.println(major1.str3);
-
+        System.out.println("-------");
 
         /**
          * 定义final变量如果不赋值，则必须在构造函数中赋值
@@ -63,7 +63,7 @@ public class FinalMajor {
          * 总结下：类加载的时候会把类的信息存储在常量池中，如果final变量已经确定好值了，这个值也会存储在常量池中
          * 当用对象调用这个变量时，首先会在堆中确定这个堆所归属的class，然后在常量池中找到这个类信息确定这个变量，
          * 然后找到它的偏移量（类在编译时早已经确定好了每个变量占用多少空间，变量的偏移量也都是确定好的），
-         * 然后在返回堆中根据这个偏移量找到这个变量的值，如果常量池中已经有确定的值了，所以就直接返回了，不在搜索对中的值
+         * 然后在返回堆中根据这个偏移量找到这个变量的值，如果常量池中已经有确定的值了，所以就直接返回了，不在搜索堆中的值
          * 这个就是编译器的优化
          */
     }

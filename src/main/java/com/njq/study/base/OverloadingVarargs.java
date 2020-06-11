@@ -14,6 +14,13 @@ public class OverloadingVarargs {
         }
     }
 
+    static void f(short... args) {
+        System.out.println("second1");
+        for (short i : args) {
+            System.out.println(" " + i);
+        }
+    }
+
     /**
      * 动态数组参数
      */

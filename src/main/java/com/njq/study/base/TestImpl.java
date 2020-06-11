@@ -14,6 +14,7 @@ public class TestImpl implements TestInterface {
 
     @Override
     public String test2(String v1) {
+        System.out.println("方法2");
         return "方法2";
     }
 }
