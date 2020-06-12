@@ -8,6 +8,8 @@ import java.lang.reflect.Field;
 public class FinalMajor {
 
     public static void main(String[] args) throws Exception {
+        System.out.println(FinalMajora.str0);
+
         /**
          * str1在编写时已经有确定的值，
          * 编译器对它进行优化在加载它的时候通过静态绑定已经直接对它进行赋值了

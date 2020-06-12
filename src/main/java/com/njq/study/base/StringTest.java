@@ -5,7 +5,10 @@ import java.lang.reflect.Field;
 public class StringTest {
     public final String str ="oldValue";
 
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws Exception {
+//        Class c = FinalMajor.class;
+//        System.out.println();
+Class.forName("com.njq.study.base.FinalMajora");
         Field field1 = StringTest.class.getField("str");
         field1.setAccessible(true);
         StringTest t = new StringTest();

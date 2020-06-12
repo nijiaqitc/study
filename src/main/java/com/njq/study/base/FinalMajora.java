@@ -6,6 +6,9 @@ import java.util.Random;
  * 编译器针对final的优化
  */
 public class FinalMajora {
+
+    public static String str0 = "qqq";
+
     public static final String str1 = "aaa";
 
     public static final String str2 = new Random().nextInt(11) + "";
