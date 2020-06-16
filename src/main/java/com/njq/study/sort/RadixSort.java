@@ -28,7 +28,7 @@ public class RadixSort {
                 order[lsd]++;
             }
             for (int i = 0; i < 10; i++) {
-                if (order[i] != 0){
+                if (order[i] != 0) {
                     for (int j = 0; j < order[i]; j++) {
                         number[k] = temp[i][j];
                         k++;

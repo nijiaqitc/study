@@ -11,10 +11,6 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.Set;
 
-/**
- * @author wuping
- * @date 2019-04-17
- */
 
 public class MultiplexerTimeServer implements Runnable {
     private Selector selector;

@@ -9,9 +9,8 @@ import java.util.Arrays;
 public class InsertSort {
 
 
-
     public static void main(String[] args) {
-        int[] num = {3, 45, 78, 64, 1,52, 11, 64, 55, 99, 11, 18};
+        int[] num = {3, 45, 78, 64, 1, 52, 11, 64, 55, 99, 11, 18};
         sort2(num);
     }
 

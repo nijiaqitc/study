@@ -9,8 +9,9 @@ import java.util.Arrays;
 public class QuickSort {
 
     public static void main(String[] args) {
-        int[] num = {3,45,78,64,52,11,64,55,99,11,18};
-        sort(num,0 ,num.length-1);
+        int[] num = {56,45,78,64,52,11,64,55,99,11,18};
+//        sort(num,0 ,num.length-1);
+        quickSort(num,0,num.length-1);
         System.out.println(arrayToString(num));
     }
 

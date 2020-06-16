@@ -1,9 +1,6 @@
 package com.njq.study.socket.aa;
 
-/**
- * @author wuping
- * @date 2019-04-17
- */
+
 
 public class TimeServer {
     public static void main(String[] args) throws Exception {

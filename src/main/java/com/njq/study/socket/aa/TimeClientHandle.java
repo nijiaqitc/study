@@ -9,10 +9,7 @@ import java.nio.channels.SocketChannel;
 import java.util.Iterator;
 import java.util.Set;
 
-/**
- * @author wuping
- * @date 2019-04-17
- */
+
 
 public class TimeClientHandle implements Runnable {
     private String host;

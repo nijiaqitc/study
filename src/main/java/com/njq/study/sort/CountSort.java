@@ -34,19 +34,21 @@ public class CountSort {
         for (int i = 0; i < a.length; ++i) {
             c[a[i] - min] += 1;//优化过的地方，减小了数组c的大小
         }
-        Arrays.stream(c).forEach(n->{
-            System.out.print(n+" ");
+        Arrays.stream(c).forEach(n -> {
+            System.out.print(n + " ");
         });
         System.out.println();
+        //计算每个元素该放在数组的哪个位置，比如最大的一个元素肯定放在，组数最后一位，下标是前面所有出现次数之和
         for (int i = 1; i < c.length; ++i) {
             c[i] = c[i] + c[i - 1];
         }
-        Arrays.stream(c).forEach(n->{
-            System.out.print(n+" ");
+        Arrays.stream(c).forEach(n -> {
+            System.out.print(n + " ");
         });
         System.out.println();
         for (int i = a.length - 1; i >= 0; --i) {
-            b[--c[a[i] - min]] = a[i];//按存取的方式取出c的元素
+            //c[a[i] - min]是计算出具体放在数组哪个位置，然后这个相同位置的下标减1，即再出现这个相同的数，就放在刚刚位置的前一个位置
+            b[--c[a[i] - min]] = a[i];
         }
         return b;
     }
