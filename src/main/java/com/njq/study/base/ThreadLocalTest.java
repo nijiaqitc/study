@@ -16,12 +16,14 @@ public class ThreadLocalTest {
     };
 
     public static void main(String[] args) {
-//        local1.set("123");
-//
-//        Man m = local2.get();
-//        m.setName("456");
-//        System.out.println(m.getName());
-//        System.out.println(local2.get().getName());
+        local1.set("123");
+
+        Man m = local2.get();
+        m.setName("456");
+        System.out.println(m.getName());
+        local2 = null;
+        local1.get();
+        System.out.println(local2.get().getName());
 //
 //        local2.set(new Man());
 //        System.out.println(local2.get().getName());
