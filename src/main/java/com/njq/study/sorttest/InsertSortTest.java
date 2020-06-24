@@ -7,14 +7,15 @@ public class InsertSortTest {
         SortPrint.out(num);
     }
 
-    public static void sort(int[] array) {
-        for (int i = 1; i < array.length; i++) {
-            int val = array[i];
+    public static void sort(int[] array){
+        for(int i=1;i<array.length;i++){
+            int val=array[i];
             int j;
-            for (j = i; j > 0 && array[j - 1] > val; j--) {
-                array[j] = array[j - 1];
+            for(j=i;j>0&&array[j-1]>val;j--){
+                array[j]=array[j-1];
             }
-            array[j] = val;
+            array[j]=val;
         }
+
     }
 }

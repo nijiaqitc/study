@@ -15,7 +15,7 @@ public class ShellSortTest {
                 for (int j = i + mid; j < arrays.length; j += mid) {
                     int val = arrays[j];
                     int k;
-                    for (k = j; k > mid && arrays[k - mid] > arrays[k]; k -= mid) {
+                    for (k = j; k > mid && arrays[k - mid] > val; k -= mid) {
                         arrays[k] = arrays[k-mid];
                     }
                     arrays[k] = val;
@@ -26,5 +26,7 @@ public class ShellSortTest {
             }
         }
     }
+
+
 
 }

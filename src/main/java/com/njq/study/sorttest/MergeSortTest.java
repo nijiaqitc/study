@@ -8,25 +8,25 @@ public class MergeSortTest {
         SortPrint.out(num1);
     }
 
-    public static int[] sort(int[] arrays, int left, int right) {
+    public static int[] sort(int[] array, int left, int right) {
         if (left >= right) {
-            return new int[]{arrays[left]};
+            return new int[]{array[left]};
         }
         int mid = (left + right) / 2;
-        int[] leftarray = sort(arrays, left, mid);
-        int[] rightarray = sort(arrays, mid + 1, right);
-        int[] newarray = new int[leftarray.length + rightarray.length];
+        int[] lefta = sort(array, left, mid);
+        int[] righta = sort(array, mid + 1, right);
+        int[] newa = new int[lefta.length + righta.length];
         int i = 0, j = 0, k = 0;
-        while (i < leftarray.length && j < rightarray.length) {
-            newarray[k++] = leftarray[i] < rightarray[j] ? leftarray[i++] : rightarray[j++];
+        while (i < lefta.length && j < righta.length) {
+            newa[k++] = lefta[i] < righta[j] ? lefta[i++] : righta[j++];
         }
-        while (i < leftarray.length) {
-            newarray[k++] = leftarray[i++];
+        while (i < lefta.length) {
+            newa[k++] = lefta[i++];
         }
-        while (j < rightarray.length) {
-            newarray[k++] = rightarray[j++];
+        while (j < righta.length) {
+            newa[k++] = righta[j++];
         }
-        return newarray;
+        return newa;
     }
 
 

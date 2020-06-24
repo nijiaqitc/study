@@ -8,19 +8,19 @@ public class SelectSortTest {
         SortPrint.out(num);
     }
 
-    public static void sort(int[] array) {
-        for (int i = 0; i < array.length + 1; i++) {
-            int temp = i;
-            for (int j = i + 1; j < array.length; j++) {
-                if (array[temp] > array[j]) {
-                    temp = j;
+    public static void sort(int[] array){
+        for(int i=0;i<array.length;i++){
+            int min = i;
+            int j;
+            for(j=i+1;j<array.length;j++){
+                if(array[j]<array[min]){
+                    min=j;
                 }
             }
-            if (i < temp) {
-                int tempVal = array[temp];
-                array[temp] = array[i];
-                array[i] = tempVal;
-            }
+            int temp = array[i];
+            array[i]=array[min];
+            array[min]=temp;
         }
     }
+
 }

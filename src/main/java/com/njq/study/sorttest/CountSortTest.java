@@ -7,26 +7,26 @@ public class CountSortTest {
         SortPrint.out(sort(a));
     }
 
-    public static int[] sort(int[] a) {
-        int max = a[0], min = a[0];
-        for (int a1 : a) {
-            if (a1 > max) {
-                max = a1;
+    public static int[] sort(int[] array) {
+        int min = array[0], max = array[0];
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] < min) {
+                min = array[i];
             }
-            if (a1 < min) {
-                min = a1;
+            if (array[i] > max) {
+                max = array[i];
             }
         }
-        int[] newarray = new int[max - min + 1];
-        for (int i = 0; i < a.length; i++) {
-            ++newarray[a[i] - min];
+        int[] a = new int[max - min + 1];
+        for (int i = 0; i < array.length; i++) {
+            ++a[array[i]-min];
         }
-        for (int i = 1; i < newarray.length; i++) {
-            newarray[i] = newarray[i] + newarray[i - 1];
+        for (int i = 1; i < a.length; i++) {
+            a[i] = a[i] + a[i - 1];
         }
-        int b[] = new int[a.length];
-        for (int i=0;i<a.length;i++){
-            b[--newarray[a[i]-min]]=a[i];
+        int[] b = new int[array.length];
+        for (int i = 0; i < b.length; i++) {
+            b[--a[array[i] - min]] = array[i];
         }
         return b;
     }
