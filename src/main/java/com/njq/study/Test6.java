@@ -3,11 +3,20 @@ package com.njq.study;
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.ListMultimap;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Test6 {
 
     public static void main(String[] args) {
+
+        List<String> aa = new ArrayList<>();
+        aa.stream().filter(n->false)
+                .map(n->n).collect(Collectors.toList());
+
+
         ListMultimap<String, String> map = ArrayListMultimap.create();
         System.out.println(map.isEmpty());
         map.put("aaaa", "111");

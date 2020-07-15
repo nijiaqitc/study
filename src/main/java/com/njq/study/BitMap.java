@@ -36,7 +36,7 @@ public class BitMap {
     public static void main(String[] args) {
         BitMap bitMap = new BitMap(20);
         bitMap.set(12);
-        System.out.println(bitMap.get(13));
+        System.out.println(bitMap.get(20));
 //        for (char c : bitMap.getBytes11()) {
 //            System.out.println(c);
 //        }

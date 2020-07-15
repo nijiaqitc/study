@@ -9,5 +9,6 @@ public class Test5 {
         System.out.println(reference.get());
         System.gc(); //垃圾回收
         System.out.println(reference.get());
+        System.out.println(Runtime.getRuntime().maxMemory());
     }
 }
