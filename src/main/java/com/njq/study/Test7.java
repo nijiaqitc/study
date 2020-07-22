@@ -5,6 +5,7 @@ import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class Test7 {
     public static Map<String, Integer> m = new HashMap<>();
@@ -26,13 +27,15 @@ public class Test7 {
 //        String str2 =         new ArrayList<String>().get(0); //返回类型就是String
 //BigDecimal aa  = new BigDecimal(0);
 //        System.out.println(aa.add(new BigDecimal(1)).add(new BigDecimal(2)));
-        Test7.fillMap();
 
-        Point p = MouseInfo.getPointerInfo().getLocation();
-        System.out.println(p.getX() + "---" + p.getY());
-        change(0, 1300, 615);
-        Robot robot = onclickSB("left");
-        outText(robot, "abc");
+
+//        Test7.fillMap();
+//
+//        Point p = MouseInfo.getPointerInfo().getLocation();
+//        System.out.println(p.getX() + "---" + p.getY());
+//        change(0, 1300, 615);
+//        Robot robot = onclickSB("left");
+//        outText(robot, "abc");
 
 //        double x = 0, y = 0;
 //        boolean flag = false;
@@ -56,7 +59,41 @@ public class Test7 {
 //            }
 //        }
 
+//        ReentrantLock lock = new ReentrantLock();
+//        new Thread(() -> {
+//            try {
+//                lock.lock();
+//                Thread.sleep(60000);
+//                lock.unlock();
+//            } catch (Exception e) {
+//
+//            }
+//        }).start();
+//        try {
+//            Thread.sleep(11);
+//
+//        } catch (Exception a) {
+//
+//        }
+//
+//        new Thread(() -> {
+//            lock.lock();
+//            try {
+//                System.out.println("1111");
+//            } catch (Exception e) {
+//
+//            } finally {
+//                lock.unlock();
+//            }
+//        }).start();
+        if(!(true&&test())){
+            System.out.println();
+        }
+    }
 
+    public static  boolean test(){
+        System.out.println("121212");
+        return false;
     }
 
     public static void change(int type, int x, int y) {

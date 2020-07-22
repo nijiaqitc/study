@@ -8,27 +8,27 @@ public class QuickSortTest {
     }
 
     public static void sort(int[] array, int left, int right) {
-        if(left >=right){
+        if (left >= right) {
             return;
         }
-        int val = array[left];
+        int mid = array[left];
         int l = left;
         int r = right;
         while (l < r) {
-            while (l < r && array[r] >= val) {
+            while (l < r && array[r] >= mid) {
                 r--;
             }
-            while (l < r && array[l] <= val) {
+            while (l < r && array[l] <= mid) {
                 l++;
             }
-            if (l < r) {
-                int temp = array[l];
-                array[l] = array[r];
-                array[r] = temp;
+            if (l != r) {
+                int temp = array[r];
+                array[r] = array[l];
+                array[l] = temp;
             }
         }
         array[left] = array[l];
-        array[l] = val;
+        array[l] = mid;
         sort(array, left, l - 1);
         sort(array, l + 1, right);
     }
