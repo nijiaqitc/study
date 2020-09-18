@@ -1,6 +1,9 @@
 package com.njq.study;
 
 import com.njq.study.model.TreeNode;
+import org.springframework.util.CollectionUtils;
+
+import java.util.*;
 
 public class Test16 {
     public static void main(String[] args) {
@@ -8,9 +11,9 @@ public class Test16 {
         TreeNode treeNode = new TreeNode();
         Test16 t = new Test16();
 //        System.out.println(t.ttt(treeNode.initThree()));
-        TreeNode t1 = treeNode.initThree();
-        t.obvise(t1);
-        t.abc(t1);
+//        TreeNode t1 = treeNode.initThree();
+//        t.obvise(t1);
+//        t.abc(t1);
 //        TreeNode link = t.link(treeNode.initThree());
 //        while (link.next != null) {
 //            System.out.println(link.val);
@@ -21,8 +24,37 @@ public class Test16 {
 //        System.out.println(now.getTime());
 //        System.out.println(System.currentTimeMillis());
 
+        List<List<Integer>> list = t.cen(treeNode.initThree());
+        list.forEach(n -> {
+            n.forEach(m -> {
+                System.out.print(m + " ");
+            });
+        });
 
     }
+
+    private List<List<Integer>> cen(TreeNode treeNode) {
+        List<List<Integer>> result = new ArrayList<>();
+        LinkedList<TreeNode> temp = new LinkedList<>();
+        temp.add(treeNode);
+        while (!CollectionUtils.isEmpty(temp)) {
+            List<Integer> cenList = new ArrayList<>();
+            int size = temp.size();
+            for (int i = 0; i < size; i++) {
+                TreeNode node = temp.pop();
+                if (node.left != null) {
+                    temp.add(node.left);
+                }
+                if (node.right != null) {
+                    temp.add(node.right);
+                }
+                cenList.add(node.val);
+            }
+            result.add(cenList);
+        }
+        return result;
+    }
+
 
     private boolean check(TreeNode treeNode, Integer min, Integer max) {
         if (treeNode == null) {
@@ -95,6 +127,14 @@ public class Test16 {
         }
         return treeNode;
     }
+
+
+
+
+
+
+
+
 
 
 }
