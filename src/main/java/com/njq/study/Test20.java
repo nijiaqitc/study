@@ -9,7 +9,36 @@ import java.util.List;
 public class Test20 {
 
     public static void main(String[] args) {
+//        DateTime firstDay = new DateTime("2020-01-01");
+//        for(int i=0;i<365;i=i+7){
+//            System.out.println(firstDay.plusDays(i).dayOfWeek().withMaximumValue().minusDays(1).toString("yyyy-MM-dd"));
+//            System.out.println(firstDay.plusDays(i).dayOfWeek().withMaximumValue().toString("yyyy-MM-dd"));
+//        }
 
+//        System.out.println(new DateTime("2020-01-01").toString("yyyy-MM-dd"));
+
+//        Test20 t2 = new Test20();
+//        int[] array = new int[]{1, 1, 2, 2, 4, 5, 5, 6};
+//        int[] a = t2.singleNumber(array);
+//        for (int i = 0; i < a.length; i++) {
+//            System.out.println(a[i]);
+//        }
+
+
+        System.out.println(~2);
+    }
+
+    public int[] singleNumber(int[] nums) {
+        int bitmask = 0;
+        for (int num : nums)
+            bitmask ^= num;
+        int diff = bitmask & (-bitmask);
+        int x = 0;
+        for (int num : nums)
+            if ((num & diff) != 0)
+                x ^= num;
+
+        return new int[]{x, bitmask ^ x};
     }
 
 
