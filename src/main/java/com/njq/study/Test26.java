@@ -5,6 +5,8 @@ import com.njq.study.model.TreeNode;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.Future;
+import java.util.concurrent.FutureTask;
 
 public class Test26 {
 
@@ -15,10 +17,27 @@ public class Test26 {
 //        node.left.left = new TreeNode(4);
 //        node.left.right = new TreeNode(5);
 //        node.right.right = new TreeNode(7);
-        Test26 t26 = new Test26();
+//        Test26 t26 = new Test26();
 //        t26.connect(node);
 //        t26.searchRange(new int[]{5, 7, 7, 8, 8, 10}, 8);
-        t26.searchRange(new int[]{2, 2}, 2);
+//        t26.searchRange(new int[]{2, 2}, 2);
+
+//        int[] a = new int[5];
+////        Arrays.fill(a,1);
+//        for (int i = 0; i < a.length; i++) {
+//            System.out.print(a[i] + " ");
+//        }
+//        int b;
+//        System.out.println(b);
+
+        int[] array = new int[]{1,2,3,4,5,6,7,8,9};
+        Test26 test26 = new Test26();
+        System.out.println(test26.search(array,5));
+
+//        new FutureTask<>()
+
+
+
     }
 
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
@@ -121,7 +140,31 @@ public class Test26 {
 
 
     public TreeNode insertIntoBST(TreeNode root, int val) {
+        int[] aa = new int[4];
         return null;
     }
+
+    public int search(int[] array, int val) {
+        if (array == null) {
+            return -1;
+        }
+        int left = 0;
+        int right = array.length - 1;
+        while (left <= right) {
+            int mid = (left + right) / 2;
+            if (val < array[mid]) {
+                right = mid - 1;
+            } else if (val > array[mid]) {
+                left = mid + 1;
+            } else {
+                return mid;
+            }
+        }
+        return -1;
+    }
+
+
+
+
 
 }
