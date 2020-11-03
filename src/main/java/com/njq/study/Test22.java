@@ -3,7 +3,9 @@ package com.njq.study;
 import com.njq.study.model.TreeNode;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Stack;
 
 public class Test22 {
 
@@ -17,9 +19,13 @@ public class Test22 {
 //        System.out.println(MessageFormat.format("aa{0}bb", 1, 2));
 //        int[] array = new int[]{8, 4, 12, 0, 5};
 //        t22.convert(array);
-        t22.c(new TreeNode().initThree());
+//        t22.c(new TreeNode().initThree());
         //8 4 2 1 3 6 5 7  12 10 9 11 14 13 15
         //1 2 3 4 5 6 7 8  9 10 11 12 13 14 15
+        t22.postOrder(new TreeNode().initThree());
+
+//        System.out.println(t22.getValue("1"));
+//        System.out.println(Test22.postOrder("1"));
     }
 
     public List<List<Integer>> generate(int numRows) {
@@ -138,20 +144,16 @@ public class Test22 {
 
     }
 
-    public void c(TreeNode node){
-        if(node == null){
+    public void c(TreeNode node) {
+        if (node == null) {
             return;
         }
 
         this.c(node.left);
-        System.out.print(node.val+" ");
+        System.out.print(node.val + " ");
         this.c(node.right);
 
     }
-
-
-
-
 
 
     int base, count, maxCount;
@@ -199,6 +201,103 @@ public class Test22 {
             maxCount = count;
             answer.clear();
             answer.add(base);
+        }
+    }
+
+
+    //中序遍历非递归实现
+    public static void midOrder(TreeNode biTree) {
+        Stack<TreeNode> stack = new Stack<>();
+        while (biTree != null || !stack.isEmpty()) {
+            while (biTree != null) {
+                stack.push(biTree);
+                biTree = biTree.left;
+            }
+            if (!stack.isEmpty()) {
+                biTree = stack.pop();
+                System.out.println(biTree.val);
+                biTree = biTree.right;
+            }
+        }
+    }
+
+    public static String getValue(String val) {
+        return val;
+    }
+
+    public void sort(TreeNode treeNode) {
+        Stack<TreeNode> stack = new Stack<>();
+        while (treeNode != null || !stack.isEmpty()) {
+            while (treeNode != null) {
+                stack.push(treeNode);
+                treeNode = treeNode.left;
+            }
+
+            if (!stack.isEmpty()) {
+                treeNode = stack.pop();
+                System.out.println(treeNode.val);
+                treeNode = treeNode.right;
+            }
+        }
+    }
+
+    public static void preOrder(TreeNode biTree) {//非递归实现
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        while (biTree != null || !stack.isEmpty()) {
+            while (biTree != null) {
+                System.out.println(biTree.val);
+                stack.push(biTree);
+                biTree = biTree.left;
+            }
+            if (!stack.isEmpty()) {
+                biTree = stack.pop();
+                biTree = biTree.right;
+            }
+        }
+    }
+
+
+    public static void postOrder(TreeNode biTree) {//后序遍历非递归实现
+        int left = 1;//在辅助栈里表示左节点
+        int right = 2;//在辅助栈里表示右节点
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        Stack<Integer> stack2 = new Stack<Integer>();//辅助栈，用来判断子节点返回父节点时处于左节点还是右节点。
+
+        while (biTree != null || !stack.empty()) {
+            while (biTree != null) {//将节点压入栈1，并在栈2将节点标记为左节点
+                stack.push(biTree);
+                stack2.push(left);
+                biTree = biTree.left;
+            }
+
+            while (!stack.empty() && stack2.peek() == right) {//如果是从右子节点返回父节点，则任务完成，将两个栈的栈顶弹出
+                stack2.pop();
+                System.out.println(stack.pop().val);
+            }
+
+            if (!stack.empty() && stack2.peek() == left) {//如果是从左子节点返回父节点，则将标记改为右子节点
+                stack2.pop();
+                stack2.push(right);
+                biTree = stack.peek().right;
+            }
+
+        }
+    }
+
+
+    public static void levelOrder(TreeNode biTree) {//层次遍历
+        if (biTree == null)
+            return;
+        LinkedList<TreeNode> list = new LinkedList<TreeNode>();
+        list.add(biTree);
+        TreeNode currentNode;
+        while (!list.isEmpty()) {
+            currentNode = list.poll();
+            System.out.println(currentNode.val);
+            if (currentNode.left != null)
+                list.add(currentNode.left);
+            if (currentNode.right != null)
+                list.add(currentNode.right);
         }
     }
 

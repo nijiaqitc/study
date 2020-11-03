@@ -5,8 +5,7 @@ import com.njq.study.model.TreeNode;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.concurrent.Future;
-import java.util.concurrent.FutureTask;
+import java.util.Stack;
 
 public class Test26 {
 
@@ -30,12 +29,11 @@ public class Test26 {
 //        int b;
 //        System.out.println(b);
 
-        int[] array = new int[]{1,2,3,4,5,6,7,8,9};
+        int[] array = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9};
         Test26 test26 = new Test26();
-        System.out.println(test26.search(array,5));
+        System.out.println(test26.search(array, 5));
 
 //        new FutureTask<>()
-
 
 
     }
