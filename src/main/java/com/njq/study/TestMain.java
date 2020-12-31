@@ -25,14 +25,17 @@ public class TestMain {
 
 //        System.out.println(TestMain.shipWithinDays(ll, 4));
 
-        String aa = "http://test-activity.yonghuivip.com/newstage/h5/yh-weixin-mall/#/presale/isuper/yushoulalal?sellerid=2&needlocation=1";
-        try {
-            System.out.println(URLEncoder.encode(aa, "UTF-8"));
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
+//        String aa = "http://test-activity.yonghuivip.com/newstage/h5/yh-weixin-mall/#/presale/isuper/yushoulalal?sellerid=2&needlocation=1";
+//        try {
+//            System.out.println(URLEncoder.encode(aa, "UTF-8"));
+//        } catch (UnsupportedEncodingException e) {
+//            e.printStackTrace();
+//        }
 
-
+        List<String> list = new ArrayList<>();
+        list.add("1");
+        System.out.println(list.get(0));
+        System.out.println(list.get(1));
     }
 
     public static int shipWithinDays(int[] weights, int D) {
