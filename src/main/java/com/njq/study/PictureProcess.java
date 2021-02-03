@@ -29,7 +29,7 @@ public class PictureProcess {
     private BufferedImage background ;
 
     public PictureProcess() {
-        background = loadImageUrl("https://image.yonghuivip.com/d47b8179a0c7f0f2f9cb6ec3656c1b46.png");
+        background = loadImageUrl("http://image.yonghuivip.com/yh-bill-review-2021/shard_card.jpg");
     }
 
     /**
@@ -222,7 +222,7 @@ public class PictureProcess {
         //往图片上写文件
         //tt.writeImageLocal("E:\\ploanshare\\2\\22.jpg", tt.modifyImage(d, "000000", 90, 90));
 //        BufferedImage result = tt.modifyImagetogeter(qrcode, background);
-        for(int i=0;i<3;i++){
+        for(int i=0;i<1;i++){
             System.out.println(i+"------------------------开始");
             Long time1  = System.currentTimeMillis();
             BufferedImage result = tt.generateaaa("https://image.yonghuivip.com/d47b8179a0c7f0f2f9cb6ec3656c1b46.png","https://image.yonghuivip.com/wechat/miniprogram/productshare/qr-wxc9cf7c95499ee604-28fbc1aca9aad3cd6f1c183bf64d8d6a88af0fc3.jpg",0.72,740,1340);

@@ -1,7 +1,9 @@
 package com.njq.study;
 
 import java.io.UnsupportedEncodingException;
+import java.math.BigDecimal;
 import java.net.URLEncoder;
+import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,11 +34,36 @@ public class TestMain {
 //            e.printStackTrace();
 //        }
 
-        List<String> list = new ArrayList<>();
-        list.add("1");
-        System.out.println(list.get(0));
-        System.out.println(list.get(1));
+//        List<String> list = new ArrayList<>();
+//        list.add("1");
+//        System.out.println(list.get(0));
+//        System.out.println(list.get(1));
+//        List<String> xx = new ArrayList();
+//        xx.add("11");
+//        xx.add("22");
+//        xx.add("33");
+//        System.out.println(MessageFormat.format("aaa{0},bbb,ccc{2}", xx.toArray()));
+//
+
+        String aa = "1.1";
+        System.out.println(new BigDecimal(aa).intValue());
     }
+
+    public int jump(int[] nums) {
+        int position = nums.length - 1;
+        int steps = 0;
+        while (position > 0) {
+            for (int i = 0; i < position; i++) {
+                if (i + nums[i] >= position) {
+                    position = i;
+                    steps++;
+                    break;
+                }
+            }
+        }
+        return steps;
+    }
+
 
     public static int shipWithinDays(int[] weights, int D) {
         int sum = 0;
