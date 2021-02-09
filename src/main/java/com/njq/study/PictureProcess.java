@@ -29,7 +29,7 @@ public class PictureProcess {
     private BufferedImage background ;
 
     public PictureProcess() {
-        background = loadImageUrl("http://image.yonghuivip.com/yh-bill-review-2021/shard_card.jpg");
+        background = loadImageUrl("https://image.yonghuivip.com/卡片占位图1.png");
     }
 
     /**
@@ -225,7 +225,7 @@ public class PictureProcess {
         for(int i=0;i<1;i++){
             System.out.println(i+"------------------------开始");
             Long time1  = System.currentTimeMillis();
-            BufferedImage result = tt.generateaaa("https://image.yonghuivip.com/d47b8179a0c7f0f2f9cb6ec3656c1b46.png","https://image.yonghuivip.com/wechat/miniprogram/productshare/qr-wxc9cf7c95499ee604-28fbc1aca9aad3cd6f1c183bf64d8d6a88af0fc3.jpg",0.72,740,1340);
+            BufferedImage result = tt.generateaaa("https://image.yonghuivip.com/d47b8179a0c7f0f2f9cb6ec3656c1b46.png","https://image.yonghuivip.com/wechat/miniprogram/productshare/qr-wxc9cf7c95499ee604-28fbc1aca9aad3cd6f1c183bf64d8d6a88af0fc3.jpg",0.72,203,500);
             String pngName = System.currentTimeMillis() + "";
             System.out.println((System.currentTimeMillis()-time1));
             System.out.println(pngName);

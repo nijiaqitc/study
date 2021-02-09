@@ -1,9 +1,9 @@
 package com.njq.study;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import com.google.common.collect.ArrayListMultimap;
+import com.google.common.collect.Multimap;
+
+import java.util.*;
 
 public class Test29 {
 
@@ -14,18 +14,34 @@ public class Test29 {
 //        System.out.println(lengthOfLastWord("Hello World"));
 
 
-        ArrayList<String> listA= new ArrayList<String>();
-        listA.add("Tom");
-        listA.add("TomB");
-        ArrayList<String> listB= new ArrayList<String>();
-        listB.add("Tom");
-        listB.add("TomA");
-        listA.retainAll(listB);
-        if(listA.size()>0){
-            System.out.println("这两个集合有相同的交集");
-        }else{
-            System.out.println("这两个集合没有相同的交集");
+//        ArrayList<String> listA= new ArrayList<String>();
+//        listA.add("Tom");
+//        listA.add("TomB");
+//        ArrayList<String> listB= new ArrayList<String>();
+//        listB.add("Tom");
+//        listB.add("TomA");
+//        listA.retainAll(listB);
+//        if(listA.size()>0){
+//            System.out.println("这两个集合有相同的交集");
+//        }else{
+//            System.out.println("这两个集合没有相同的交集");
+//        }
+        Multimap<String, String> shopAreaMap = ArrayListMultimap.create();
+//        城市map:{"110000":["110000"],"310000":["310000","310000-1"],"180000":["180000","180000-1"]}
+        shopAreaMap.put("110000","110000");
+        shopAreaMap.put("310000","310000");
+        shopAreaMap.put("310000","310000-1");
+        shopAreaMap.put("180000","180000");
+        shopAreaMap.put("180000","180000-1");
+
+
+        for(String  m:shopAreaMap.keys()){
+            System.out.println(m);
+            System.out.println("---");
+            System.out.println(m);
+            System.out.println("!!");
         }
+
     }
 
     public static int maxSubArray(int[] nums) {
